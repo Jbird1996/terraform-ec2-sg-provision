@@ -25,6 +25,10 @@ Error Reduction. IaC minimizes the probability of errors or deviations when prov
 Disaster Recovery. With IaC you can actually recover from disasters more rapidly. Because manually constructed infrastructure needs to be manually rebuilt. But with IaC, you can usually just re-run scripts and have the exact same software provisioned again.
 
 
+### Completing the project
+
+I will be writing a quick description of each file and its purpose.
+
 Terraform init
 
 Terraform validate- During this phase I had to change several files to complete the validation. Creating this many files lead to some mistakes (mostly the wrong variable input) but I managed to rectify this.
@@ -32,3 +36,33 @@ Terraform validate- During this phase I had to change several files to complete 
 Terraform plan
 
 Terraform apply
+
+The 6 subnets running correctly.
+
+![image](https://user-images.githubusercontent.com/117186369/212904537-65bc00fe-5dc5-4172-9a81-8452d3761a46.png)
+
+The VPC setup and running correctly.
+
+![image](https://user-images.githubusercontent.com/117186369/212904691-43045d33-7dfe-4ee3-82c7-0bbf9d958727.png)
+
+Security groups setup and running correctly.
+
+![image](https://user-images.githubusercontent.com/117186369/212904777-44ff6969-1460-4bd1-9a5e-83dd91df2545.png)
+
+1 bastion host and 2 private EC2 instances running correctly.
+
+![image](https://user-images.githubusercontent.com/117186369/212904905-15c265e5-45ff-4a0e-ab29-5d9d771b7ca6.png)
+
+Logging into the bastion host successfully.
+
+![image](https://user-images.githubusercontent.com/117186369/212905020-12b36e5e-5c16-4e4c-ae85-28ffeb91cef6.png)
+
+Connecting to the private EC2 instance from the bastion host successfully.
+
+![image](https://user-images.githubusercontent.com/117186369/212905099-fcbeeca8-866f-4eb9-8b16-55d44395a0b4.png)
+
+
+
+
+
+
