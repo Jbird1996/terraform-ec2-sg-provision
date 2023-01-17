@@ -23,6 +23,9 @@ Disaster Recovery. With IaC you can actually recover from disasters more rapidly
 
 
 Terraform init
+
 Terraform validate- During this phase I had to change several files to complete the validation. Creating this many files lead to some mistakes (mostly the wrong variable input) but I managed to rectify this.
+
 Terraform plan
+
 Terraform apply
