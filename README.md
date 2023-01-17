@@ -58,8 +58,39 @@ This file contains the EC2 instance type to be used, the instance keypair to be 
 
 The file creates an elastic IP for the bastion host. An Elastic IP address is a static IPv4 address designed for dynamic cloud computing. An Elastic IP address is allocated to your AWS account, and is yours until you release it.
 
-####
+#### securitygroup-bastionsg.tf
 
+This is the security group for the public bastion host. It allows all traffic in via SSH on port 22 and all outbound traffic.
+
+#### securitygroup-outputs.tf
+
+Produces a list of outputs when the security groups are created.
+
+#### securitygroup-privatesg.tf
+
+The security group for the private instances, they only allow inbound traffic from within the VPC such as the bastion host.
+
+#### vpc-module.tf
+
+This file creates the VPC with the alot of variable values from the vpc-variables.tf file. 
+
+#### vpc-outputs.tf
+
+This file creates outputs from the created VPC. Terraform outputs allow you to share data between Terraform workspaces, and with other tools and automation. Outputs are also the only way to share data from a child module to your configuration's root module.
+
+#### vpc-variables.tf
+
+A list of all the variables used within the VPC.
+
+#### vpc-versions.tf
+
+The versions used within this whole configuration. 
+
+#### vpc.auto.tfvars
+
+This variables overwrite variables written in other files. These variables are used in the vpc-module file.
+
+### Lastly run the terraform commands and build the infrastructure.
 
 Terraform init
 
