@@ -29,6 +29,38 @@ Disaster Recovery. With IaC you can actually recover from disasters more rapidly
 
 I will be writing a quick description of each file and its purpose.
 
+#### app1-install.sh 
+
+This shell script runs on the private ec2 instances when they are setup successfully.
+
+#### datasource-ami.tf
+
+This file contains the AMI information for the ec2 instances. It creates an amazon linux ec2 instance.
+
+#### ec2instance-bastion.tf 
+
+This file creates the bastion host. Using the ec2 module from the terraform registry and the inputs are from variables files within the project.
+
+#### ec2instance-outputs.tf
+
+This file produces a list of outputs from the ec2 instances when they are created, these outputs can then be used in other files within the project.
+
+#### ec2instance-private.tf
+
+I had to change the module version of this file as I couldnt get it to work using the most up to date version of the EC2 module. This file creates 2 private ec2 instances and places them in 2 different subnets. Then runs the app1 shell script.
+
+#### ec2instance-variables.tf 
+
+This file contains the EC2 instance type to be used, the instance keypair to be associated with the EC2 instances and the private instance count which is overwritten by the ec2instance.auto.tfvars file.
+
+
+#### Elasticip.tf
+
+The file creates an elastic IP for the bastion host. An Elastic IP address is a static IPv4 address designed for dynamic cloud computing. An Elastic IP address is allocated to your AWS account, and is yours until you release it.
+
+####
+
+
 Terraform init
 
 Terraform validate- During this phase I had to change several files to complete the validation. Creating this many files lead to some mistakes (mostly the wrong variable input) but I managed to rectify this.
